@@ -1,8 +1,9 @@
 {
   "name": "SQL::NamedPlaceholder",
   "author": "astj",
+  "source-url": "ssh://git@github.com/astj/p6-SQL-NamedPlaceholder.git",
   "support": {
-    "source": ""
+    "source": "ssh://git@github.com/astj/p6-SQL-NamedPlaceholder.git"
   },
   "perl": "v6",
   "build-depends": [
