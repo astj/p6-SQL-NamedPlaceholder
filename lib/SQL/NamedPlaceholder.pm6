@@ -14,8 +14,8 @@ sub bind-named (Str $query is copy, %bind-hash --> List) is export {
     $query ~~ s:g/\:(<placeholder>)/{
         die "bind parameter $0 is not found." unless %bind-hash{$0}:exists;
         my $value = %bind-hash{$0};
-        @bind-list.push($value);
-        "?"
+        @bind-list.push(|$value);
+        $value ~~ List ?? $value.map({"?"}).join(", ") !! '?'
     }/;
     return [ $query, @bind-list ];
 }
