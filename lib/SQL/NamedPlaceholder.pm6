@@ -12,7 +12,7 @@ sub bind-named (Str $query is copy, %bind-hash --> List) is export {
     $query ~~ s:g/($<cq>=(<column-quote>?)$<key>=(<placeholder>)$<cq>\s*<operator>\s*)\?/$0\:$0<key>/;
 
     $query ~~ s:g/\:(<placeholder>)/{
-        die "bind parameter $0 is not found." unless %bind-hash{$0}:exists;
+        die "'$0' does not exist in bind hash" unless %bind-hash{$0}:exists;
         my $value = %bind-hash{$0};
         @bind-list.push(|$value);
         $value ~~ List ?? $value.map({"?"}).join(", ") !! '?'
