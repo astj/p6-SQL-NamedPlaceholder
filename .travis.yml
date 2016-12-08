@@ -4,3 +4,5 @@ perl6:
 install:
   - rakudobrew build-panda
   - panda --notests installdeps .
+env:
+  - TEST_AUTHOR=1
