@@ -45,7 +45,7 @@ SQL::NamedPlaceholder is extension of placeholder. This enable more readable and
 
 astj <asato.wakisaka@gmail.com>
 
-Author of original SQL::NamedPlaceholder in Perl5 is cho45 <cho45@lowreal.net>.
+Author of original SQL::NamedPlaceholder in perl5 is cho45 <cho45@lowreal.net>.
 
 # SEE ALSO
 
@@ -53,5 +53,12 @@ Author of original SQL::NamedPlaceholder in Perl5 is cho45 <cho45@lowreal.net>.
 
 # LICENSE
 
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
+```
+This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
+```
+
+Original perl5's SQL::NamedPlaceholder is licensed under following terms:
+
+```
+This library is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
+```
