@@ -17,5 +17,5 @@
     "Test::META"
   ],
   "description": "Perl6 port of p5 SQL::NamedPlaceholder",
-  "version": "v0.1.0"
+  "version": "0.1.0"
 }
