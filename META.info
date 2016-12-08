@@ -5,7 +5,7 @@
   "support": {
     "source": "ssh://git@github.com/astj/p6-SQL-NamedPlaceholder.git"
   },
-  "perl": "v6",
+  "perl": "6",
   "build-depends": [
   ],
   "provides": {
