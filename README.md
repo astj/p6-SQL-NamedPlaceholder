@@ -1,64 +1,73 @@
-# p6-SQL-NamedPlaceholder
+[![Build Status](https://travis-ci.org/astj/p6-SQL-NamedPlaceholder.svg?branch=master)](https://travis-ci.org/astj/p6-SQL-NamedPlaceholder)
 
-Perl6 port of [SQL::NamedPlaceholder](https://github.com/cho45/SQL-NamedPlaceholder).
+NAME
+====
 
-# SYNOPSIS
+SQL::NamedPlaceholder - extension of placeholder
 
-```
-use SQL::NamedPlaceholder;
+SYNOPSIS
+========
 
-my ($sql, $bind) = bind-named(q[
-    SELECT *
-    FROM entry
-    WHERE
-        user_id = :user_id
-], {
-    user_id => $user_id
-});
+    use SQL::NamedPlaceholder;
 
-$dbh.prepare($sql).execute(|$bind);
-```
+    my ($sql, $bind) = bind-named(q[
+        SELECT *
+        FROM entry
+        WHERE
+            user_id = :user_id
+    ], {
+        user_id => $user_id
+    });
 
-# DESCRIPTION
+    $dbh.prepare($sql).execute(|$bind);
+
+DESCRIPTION
+===========
 
 SQL::NamedPlaceholder is extension of placeholder. This enable more readable and robust code.
 
-# FUNCTION
+FUNCTION
+========
 
-- [$sql, $bind] = bind-named($sql, $hash);
+  * [$sql, $bind] = bind-named($sql, $hash);
 
     The $sql parameter is SQL string which contains named placeholders. The $hash parameter is map of bind parameters.
 
     The returned $sql is new SQL string which contains normal placeholders ('?'), and $bind is List of bind parameters.
 
-# SYNTAX
+SYNTAX
+======
 
-- :foobar
+  * :foobar
 
     Replace as placeholder which uses value from $hash{foobar}.
 
-- foobar = ?, foobar > ?, foobar < ?, foobar <> ?, etc.
+  * foobar = ?, foobar > ?, foobar < ?, foobar <> ?, etc.
 
     This is same as 'foobar (op.) :foobar'.
 
-# AUTHOR
+AUTHOR
+======
 
 astj <asato.wakisaka@gmail.com>
 
-Author of original SQL::NamedPlaceholder in perl5 is cho45 <cho45@lowreal.net>.
+ORIGINAL AUTHOR
+===============
 
-# SEE ALSO
+This module is port of [SQL::NamedPlaceholder in Perl5](https://github.com/cho45/SQL-NamedPlaceholder).
 
-- [SQL::NamedPlaceholder in Perl5](https://github.com/cho45/SQL-NamedPlaceholder)
+Author of original SQL::NamedPlaceholder in Perl5 is cho45 <cho45@lowreal.net>.
 
-# LICENSE
+SEE ALSO
+========
 
-```
+[SQL::NamedPlaceholder in Perl5](https://github.com/cho45/SQL-NamedPlaceholder)
+
+LICENSE
+=======
+
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
-```
 
-Original perl5's SQL::NamedPlaceholder is licensed under following terms:
+Original Perl5's SQL::NamedPlaceholder is licensed under following terms:
 
-```
 This library is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
-```
