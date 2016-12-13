@@ -2,7 +2,7 @@ use v6;
 
 unit module SQL::NamedPlaceholder;
 
-my regex placeholder { <[A..Za..z_]><[A..Za..z0..9_]>* }
+my regex placeholder { <[A..Za..z_]><[A..Za..z0..9_-]>* }
 my regex operator { '=' || '<=' || '<' || '>=' || '>' || '<>' || '!=' || '<=>' }
 my token column-quote { <[`"]> }
 sub bind-named (Str $query is copy, %bind-hash --> List) is export {
